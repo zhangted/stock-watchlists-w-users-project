@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<% if session[:user_id] != nil %>
+<h1><%=session[:name]%>'s Watchlists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Tickers</th>
+      <th>User Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @watchlists.each do |watchlist| %>
+      <tr>
+        <td><%= watchlist.name %></td>
+        <td><%= watchlist.tickers %></td>
+        <td><%= User.where(id: session[:user_id]).first.email %></td>
+        <td><%= link_to 'Show Details', watchlist %></td>
+        <td><%= link_to 'Edit Watchlist', edit_watchlist_path(watchlist) %></td>
+        <td><%= link_to 'Delete', watchlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= 
+link_to 'New Watchlist', new_watchlist_path %>
+
+
+<% else %>
+
+Only registered users who are logged in can access their watchlists. Please signup or login. Thank you. <br />
+<%= link_to 'register', signup_path %>   
+<%= link_to 'login', login_path %>
+
+<% end %>
+
+<%= link_to 'home', root_path %>

@@ -1,0 +1,13 @@
+<body>
+    <h1>Welcome to stockwatchlist.com, <%= @user.name %></h1>
+    <p>
+      Thanks for registering at stockwatchlist.com,
+      your username is: <%= @user.email %>.<br><br>
+      Your confirmation code is: <%= @user.verification_code %>
+    </p>
+    <p>
+      Please login <%= link_to 'here', login_url %> and enter the confirmation code.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+

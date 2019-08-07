@@ -1,0 +1,37 @@
+h1 {
+	color: black;
+	font-family: georgia;
+	font-size: 35px;
+}
+h2 {
+	color: black;
+	font-family: georgia;
+	font-size 14px;
+}
+h3 {
+	color: black;
+	font-family: georgia;
+	font-size 11px;
+}
+a:link, a:visited {
+  background-color: #222d65;
+  font-family: georgia;
+  color: white;
+  padding: 8px 16px;
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block;
+}
+body {
+  background-color: #FFF5E1;
+}
+.btn {
+  background-color: #f44336;
+  border: none;
+  font-family: georgia;
+  color: white;
+  padding: 8px 19px;
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block;
+}

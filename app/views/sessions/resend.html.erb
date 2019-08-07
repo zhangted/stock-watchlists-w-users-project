@@ -1,0 +1,9 @@
+<%= 
+if session[:email] != nil 
+    "Confirmation code resent.".html_safe
+else 
+    "Invalid session".html_safe
+    session[:email] = nil
+end %>
+<br />
+<%= link_to 'Back to Login Page', login_path %>

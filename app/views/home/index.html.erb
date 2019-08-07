@@ -1,0 +1,27 @@
+<br /><br /><br />
+<h1><center>stocks watchlist app</center></h1>
+<h3><center>(Note: userDB has HTTP auth. Username is 'admin', password is 'password')</center></h3>
+
+<h2>
+<center>
+<%= 
+if session[:user_id] != nil
+    link_to 'watchlists', watchlists_path
+end %>
+<%= 
+if session[:user_id] != nil
+    link_to 'logout', logout_path
+end %>
+
+<%=
+if session[:user_id] == nil
+    link_to 'register', signup_path   
+end %>
+<%=
+if session[:user_id] == nil
+    link_to 'login', login_path 
+end %>
+<%= link_to 'userDB', users_path %>
+
+</center>
+</h2>

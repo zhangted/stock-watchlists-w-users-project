@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @watchlist.name %>
+</p>
+
+<p>
+  <strong>Tickers:<br /></strong>
+  <% @watchlist.tickers.split(',').each do |t| %>
+    <%= link_to t, 'https://www.marketwatch.com/investing/stock/'+t+'/profile' %><br />
+  <% end %>
+</p>
+
+<!--
+<p>
+  <strong>User:</strong>
+  <%= @watchlist.user_id %>
+</p>
+-->
+
+<%= link_to 'Edit', edit_watchlist_path(@watchlist) %> |
+<%= link_to 'Back', watchlists_path %>
